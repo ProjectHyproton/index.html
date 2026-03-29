@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uRecord | Everything Connects To Everything Else</title>
+    <style>
+        /* 1. 设置纯白背景 (Base settings) */
+        body { 
+            background-color: #ffffff; /* 纯白背景 */
+            color: #111111; /* 深灰色文字，增加可读性 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            line-height: 2.0; /* 调高行高，增加阅读的呼吸感 */
+            padding: 20px; 
+            max-width: 900px; /* 控制页面最大宽度 */
+            margin: 0 auto; 
+            display: flex; 
+            flex-direction: column; /* 让内容纵向排列 */
+            align-items: center; 
+            min-height: 100vh; 
+        }
+
+        /* 2. Logo 的排版 (Logo layout) */
+        .logo-container {
+            width: 100%;
+            max-width: 600px; /* 控制 Logo 的最大宽度，防止太大 */
+            margin: 60px 0 40px 0; /* 增加上下边距 */
+            text-align: center;
+        }
+
+        .logo-image {
+            width: 100%; /* 图片宽度撑满容器 */
+            height: auto; /* 保持图片比例 */
+            display: block;
+        }
+
+        /* 3. 文字内容的排版 (Content layout) - 纯直铺方式 */
+        .content-container { 
+            width: 100%;
+            box-sizing: border-box; 
+            padding: 0 40px; /* 增加左右内边距，更舒展 */
+            margin-top: 40px; /* 增加 Logo 后的文字上边距 */
+        }
+
+        p { 
+            margin: 22px 0; /* 增加段落间距 */
+            text-align: justify; /* 文本两端对齐 */
+            color: #24292e; 
+            font-size: 1.15rem; /* 稍微调大字体，增加庄重感 */
+        }
+
+        .team-info { 
+            color: #6a737d; /* 底部信息调淡 */
+            font-size: 1.05rem; /* 底部信息字体 */
+            margin-top: 60px; /* 增加底部信息的上边距 */
+            border-top: 1px dashed #eaecef; 
+            padding-top: 30px; 
+            text-align: center;
+        }
+
+        .highlight { 
+            color: #f66a0a; /* 橙色高亮，比之前更柔和 */
+            font-weight: bold; 
+        }
+
+        a { 
+            color: #0366d6; 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+
+        a:hover { 
+            text-decoration: underline; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="logo.png" alt="uRecord Logo - Human Library Project" class="logo-image">
+    </div>
+
+    <div class="content-container">
+        
+        <p>这里由 <span class="highlight">Project Hyproton</span> 团队负责开发和制作。</p>
+        
+        <p>我们的愿景是打造一个人类图书馆，以收录世界各地人类同胞的人生故事来构建一个去中心化、去政治宗教化的人类历史大纲，让相互仇视敌对的民族与国家能够了解到他们所谓的敌人也同样是有血有肉的人。</p>
+        
+        <p>每个人都是独一无二的，每个人都拥有自己与众不同的人生，人类社会里每个人都很重要是世界必不可少的一环，不只有名人、伟大的科学家、卓越的政治家才能够被历史记住，每个人都拥有载入世界历史的权利，我们希望能够为世界和平，人类团结的地球千年梦作出一份贡献。</p>
+        
+        <div class="team-info">
+            uRecord 正在设计开发中，欢迎加入 Project Hyproton 团队参与到我们的项目中。<br>
+            <strong>社区 QQ 群：</strong> <a href="mqqapi://card/show?source=sharecard&src_type=internal&version=1&uin=962287452">962287452</a>
+        </div>
+    </div>
+
+</body>
+</html>
