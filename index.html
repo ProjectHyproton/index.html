@@ -24,12 +24,13 @@
 }
 
 #timer-display {
-    display: block; /* 强制占据整行 */
-    font-size: 32px; /* 时间数字维持两倍大 */
+    display: block;
+    font-size: 24px;        /* ⬅️ 从 32px 降到 24px，保证不换行 */
     font-weight: bold;
     color: #000;
-    letter-spacing: -1px; /* ⬅️ 缩小字符间距，数字更紧凑 */
-    margin-top: 10px; /* 标题和数字之间的间距 */
+    letter-spacing: -1.5px; /* ⬅️ 紧凑字间距 */
+    margin-top: 8px;
+    white-space: nowrap;    /* ⬅️ 加上这一行，强制禁止换行 */
 }
 
 .timer-unit {
@@ -110,10 +111,15 @@
 </head>
 <body>
 
+<div class="logo-container">
+    <img src="logo.png" alt="uRecord Logo" class="logo-image">
+</div>
+
 <div id="project-timer">
     项目已运行
     <span id="timer-display">计算中...</span>
 </div>
+
 
 
 
