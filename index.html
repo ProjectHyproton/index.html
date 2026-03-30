@@ -12,20 +12,30 @@
         /* 计时器容器样式 */
 /* 找到这段代码进行修改 */
 #project-timer {
+    display: flex;
+    flex-direction: column; /* 让文字和时间上下排列 */
+    align-items: center;
     font-family: "Courier New", Courier, monospace;
-    font-size: 32px; /* 调整为 32px，大约是普通文字的两倍大 */
-    font-weight: bold; /* 加粗一点，让它更有分量 */
-    color: #333;
-    margin-top: 10px; /* 因为变大了，间距也要稍微留一点 */
+    font-size: 16px; /* 标题文字大小 */
+    color: #666;
+    margin-top: 10px;
     margin-bottom: 40px;
     text-align: center;
-    line-height: 1.2;
 }
 
-/* 里面的数字可以再稍微调亮一点或者保持原样 */
-.timer-unit {
+#timer-display {
+    display: block; /* 强制占据整行 */
+    font-size: 32px; /* 时间数字维持两倍大 */
+    font-weight: bold;
     color: #000;
+    letter-spacing: -1px; /* ⬅️ 缩小字符间距，数字更紧凑 */
+    margin-top: 10px; /* 标题和数字之间的间距 */
 }
+
+.timer-unit {
+    /* 如果需要单独调整数字颜色可以加在这里 */
+}
+
 
 
         /* 1. 设置纯白背景 (Base settings) */
@@ -100,12 +110,11 @@
 </head>
 <body>
 
-    <div class="logo-container">
-        <img src="IMG_6753.png" alt="uRecord Logo - Human Library Project" class="logo-image">
-    </div>
-    <div id="project-timer">
-    项目已运行：<span id="timer-display">载入中...</span>
+<div id="project-timer">
+    项目已运行
+    <span id="timer-display">计算中...</span>
 </div>
+
 
 
     <div class="content-container">
