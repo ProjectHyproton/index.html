@@ -10,18 +10,23 @@
 
     <style>
         /* 计时器容器样式 */
+/* 找到这段代码进行修改 */
 #project-timer {
     font-family: "Courier New", Courier, monospace;
-    font-size: 14px; /* 稍微小一点，显得精致 */
-    color: #666;
-    margin-top: -20px; /* 向上微调，贴近 Logo */
-    margin-bottom: 30px;
+    font-size: 32px; /* 调整为 32px，大约是普通文字的两倍大 */
+    font-weight: bold; /* 加粗一点，让它更有分量 */
+    color: #333;
+    margin-top: 10px; /* 因为变大了，间距也要稍微留一点 */
+    margin-bottom: 40px;
     text-align: center;
+    line-height: 1.2;
 }
+
+/* 里面的数字可以再稍微调亮一点或者保持原样 */
 .timer-unit {
-    font-weight: bold;
-    color: #000; /* 数字用纯黑，突出一下 */
+    color: #000;
 }
+
 
         /* 1. 设置纯白背景 (Base settings) */
         body { 
