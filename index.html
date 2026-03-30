@@ -40,19 +40,32 @@
 
 
         /* 1. 设置纯白背景 (Base settings) */
-        body { 
-            background-color: #ffffff; /* 纯白背景 */
-            color: #111111; /* 深灰色文字，增加可读性 */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
-            line-height: 2.0; /* 调高行高，增加阅读的呼吸感 */
-            padding: 20px; 
-            max-width: 900px; /* 控制页面最大宽度 */
-            margin: 0 auto; 
-            display: flex; 
-            flex-direction: column; /* 让内容纵向排列 */
-            align-items: center; 
-            min-height: 100vh; 
-        }
+        body {
+    /* 1. 指向你的图片文件名，确保后缀是对的（.jpg 或 .jpeg） */
+    background-image: url('IMG_7168.jpeg'); 
+    
+    /* 2. 让图片铺满整个屏幕，不留白边 */
+    background-size: cover; 
+    
+    /* 3. 关键：适配代码！从右侧 80% 的位置开始对齐 */
+    /* 这样在手机竖屏时，会自动保留右侧的光束和蓝点，把左边的纯黑背景裁掉 */
+    background-position: 80% center; 
+    
+    /* 4. 禁止图片重复 */
+    background-repeat: no-repeat;
+    
+    /* 5. 增加高级感：滚动网页时，背景星星不动 */
+    background-attachment: fixed; 
+    
+    /* 6. 其他基础设置 */
+    margin: 0;
+    color: #ffffff; /* 文字一定要改白色，否则看不见 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
 
         /* 2. Logo 的排版 (Logo layout) */
         .logo-container {
