@@ -9,6 +9,20 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <style>
+        /* 计时器容器样式 */
+#project-timer {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px; /* 稍微小一点，显得精致 */
+    color: #666;
+    margin-top: -20px; /* 向上微调，贴近 Logo */
+    margin-bottom: 30px;
+    text-align: center;
+}
+.timer-unit {
+    font-weight: bold;
+    color: #000; /* 数字用纯黑，突出一下 */
+}
+
         /* 1. 设置纯白背景 (Base settings) */
         body { 
             background-color: #ffffff; /* 纯白背景 */
@@ -84,6 +98,10 @@
     <div class="logo-container">
         <img src="IMG_6753.png" alt="uRecord Logo - Human Library Project" class="logo-image">
     </div>
+    <div id="project-timer">
+    项目已运行：<span id="timer-display">载入中...</span>
+</div>
+
 
     <div class="content-container">
         
@@ -109,6 +127,38 @@
     <div style="text-align:center; color:#888; font-size:14px; margin-top:30px; margin-bottom:20px;">
         <span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
     </div>
+
+<script>
+    function updateTimer() {
+        // 设置初始时间：2026年3月29日 23:00:00 (北京时间)
+        // JS 的 Date 对象中，月份是从 0 开始计数的，所以 3 月对应数字 2
+        const startTime = new Date(2026, 2, 29, 23, 0, 0).getTime();
+        
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = now - startTime;
+
+            // 如果当前时间还没到初始时间，显示 0
+            const displayDiff = diff > 0 ? diff : 0;
+
+            const days = Math.floor(displayDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((displayDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((displayDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((displayDiff % (1000 * 60)) / 1000);
+
+            const timerElement = document.getElementById("timer-display");
+            if (timerElement) {
+                timerElement.innerHTML = 
+                    `<span class="timer-unit">${days}</span> 天 ` +
+                    `<span class="timer-unit">${hours}</span> 小时 ` +
+                    `<span class="timer-unit">${mins}</span> 分 ` +
+                    `<span class="timer-unit">${secs}</span> 秒`;
+            }
+        }, 1000);
+    }
+    // 启动计时器
+    updateTimer();
+</script>
 
 </body>
 </html>
