@@ -39,34 +39,44 @@
 
 
 
-        body {
-    /* 1. 字体颜色改为全白 */
-    color: #ffffff !important; 
-    
-    /* 2. 背景设置 */
-    background-image: url('IMG_7168.jpeg'); 
-    background-size: cover; 
-    
-    /* 3. 调整蓝点位置：如果蓝点还是看不见或太偏，尝试把 85% 改成 95% 或者 75% */
-    background-position: 85% center; 
-    
-    /* 4. 强制固定背景：解决滑动时背景跟着走的问题 */
-    background-attachment: fixed; 
+        /* 1. 解决背景固定和蓝点居中的终极方案 */
+body::before {
+    content: "";
+    position: fixed; /* 锁死位置 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 放在所有内容下面 */
+    background-image: url('IMG_7168.jpeg');
+    background-size: cover;
+    background-position: center center; /* 蓝点放在正中心 */
     background-repeat: no-repeat;
+}
 
-    /* 5. 基础布局 */
+/* 2. 强制正文文字变白 */
+body {
     margin: 0;
+    color: #ffffff !important; /* 强制所有文字白色 */
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    text-align: center;
+    background-color: #000; /* 防止图片加载前的白闪 */
 }
 
-/* 检查：确保你的计时器里的数字也是白的 */
-#timer-display {
-    color: #ffffff; 
-    text-shadow: 0 0 10px rgba(0,0,0,0.8); /* 给数字加个黑阴影，防止在亮色光束处看不清 */
+/* 3. 针对简介文字的特别白化 */
+p, span, div, strong {
+    color: #ffffff !important;
+}
+
+/* 4. 计时器区域微调，增加辨识度 */
+#project-timer {
+    background: rgba(255, 255, 255, 0.1); /* 淡淡的白光 */
+    backdrop-filter: blur(10px); /* 磨砂玻璃效果 */
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px 0;
 }
 
 
